@@ -77,3 +77,57 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
+.cell[data-value="2"] {
+  background-color: #f9f6f2; /* Light Beige */
+  color: #776e65;
+}
+
+.cell[data-value="4"] {
+  background-color: #f3d9b0; /* Light Orange */
+  color: #776e65;
+}
+
+.cell[data-value="8"] {
+  background-color: #f2b179; /* Pastel Orange */
+  color: white;
+}
+
+.cell[data-value="16"] {
+  background-color: #f59563; /* Warm Peach */
+  color: white;
+}
+
+.cell[data-value="32"] {
+  background-color: #f67c5f; /* Soft Coral */
+  color: white;
+}
+
+.cell[data-value="64"] {
+  background-color: #f65e3b; /* Muted Red */
+  color: white;
+}
+
+.cell[data-value="128"] {
+  background-color: #edcf72; /* Pale Yellow */
+  color: white;
+}
+
+.cell[data-value="256"] {
+  background-color: #edcc61; /* Soft Gold */
+  color: white;
+}
+
+.cell[data-value="512"] {
+  background-color: #edc850; /* Light Amber */
+  color: white;
+}
+
+.cell[data-value="1024"] {
+  background-color: #edc53f; /* Warm Yellow */
+  color: white;
+}
+
+.cell[data-value="2048"] {
+  background-color: #edc22e; /* Goldenrod */
+  color: white;
+}
