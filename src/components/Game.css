@@ -1,0 +1,60 @@
+/* 隱藏遊戲區域的游標，避免出現文字游標 */
+.game-container {
+  caret-color: transparent;
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.score-board {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  background-color: #bbada0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  background-color: #eee4da;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #776e65;
+  transition: background 0.2s;
+}
+/* Restart 按鈕美化 */
+.restart-btn {
+  font-size: 1.5rem;
+  padding: 0.7em 2em;
+  background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 1em;
+}
+.restart-btn:hover {
+  background: linear-gradient(90deg, #ffcc33 0%, #ffb347 100%);
+  transform: scale(1.07);
+}

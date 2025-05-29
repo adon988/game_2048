@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+/**
+ * 測試 App 元件是否正確渲染 2048 標題
+ */
+test('renders 2048 title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/2048/i);
+  expect(titleElement).toBeInTheDocument();
 });

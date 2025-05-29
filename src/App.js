@@ -1,22 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
+import Game from './components/Game';
 import './App.css';
 
+/**
+ * @function App
+ * @description 應用程式的主要組件，負責渲染遊戲。
+ * @returns {JSX.Element} 應用程式組件的 JSX 元素。
+ */
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>2048</h1>
+        <Game />
       </header>
     </div>
   );

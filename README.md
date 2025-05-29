@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# 2048 遊戲 (React 版)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 介紹
+本專案為以 React 製作的 2048 經典益智遊戲，支援鍵盤操作、分數計算、遊戲重啟，並針對同步問題進行最佳化。
 
-## Available Scripts
+## 功能特色
+- 支援上下左右鍵移動方塊
+- 分數自動累加
+- 遊戲結束提示
+- Restart 按鈕美化
+- 狀態同步安全（setGrid callback 實作）
+- 隱藏游標避免操作干擾
 
-In the project directory, you can run:
+## 安裝與啟動
 
-### `npm start`
+```bash
+cd my-2048-game
+npm install
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+瀏覽器開啟 [http://localhost:3000](http://localhost:3000) 即可遊玩。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 檔案結構
+- `src/components/Game.js`：主遊戲邏輯與 UI
+- `src/components/Game.css`：遊戲樣式
+- `src/App.js`：應用入口
+- `src/index.js`：React 入口
 
-### `npm test`
+## 開發重點
+- 使用 setGrid(prevGrid => ...) 確保狀態正確同步
+- 各方向移動皆有正確矩陣轉換
+- 具備詳細 function 級註解與 log，方便除錯
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 貢獻
+歡迎 PR 與 issue 討論改進！
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 授權
+MIT License
