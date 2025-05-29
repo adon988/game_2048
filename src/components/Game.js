@@ -7,6 +7,43 @@ import './Game.css';
  * @returns {JSX.Element} 遊戲組件的 JSX 元素。
  */
 const Game = () => {
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchStartY, setTouchStartY] = useState(0);
+
+  /**
+   * @function handleTouchStart
+   * @description 記錄觸摸開始的座標並防止頁面滾動。
+   * @param {TouchEvent} event 觸摸事件。
+   */
+  const handleTouchStart = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setTouchStartX(event.touches[0].clientX);
+    setTouchStartY(event.touches[0].clientY);
+  };
+
+  /**
+   * @function handleTouchEnd
+   * @description 判斷滑動方向並防止頁面滾動。
+   * @param {TouchEvent} event 觸摸事件。
+   */
+  const handleTouchEnd = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const touchEndX = event.changedTouches[0].clientX;
+    const touchEndY = event.changedTouches[0].clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX > 30) move('right');
+      else if (deltaX < -30) move('left');
+    } else {
+      if (deltaY > 30) move('down');
+      else if (deltaY < -30) move('up');
+    }
+  };
   const [grid, setGrid] = useState(Array(4).fill(null).map(() => Array(4).fill(0)));
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
@@ -196,7 +233,11 @@ const Game = () => {
   }, []);
 
   return (
-    <div className="game-container">
+    <div
+      className="game-container"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="score-board">Score: {score}</div>
       <div className="grid">
         {grid.map((row, rowIndex) => (
@@ -226,3 +267,17 @@ const Game = () => {
 };
 
 export default Game;
+/**
+ * @function adjustHeight
+ * @description 動態調整 game-container 的高度以排除瀏覽器 UI。
+ */
+const adjustHeight = () => {
+  const gameContainer = document.querySelector('.game-container');
+  if (gameContainer) {
+    const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+    gameContainer.style.height = `${viewportHeight}px`;
+  }
+};
+
+window.addEventListener('resize', adjustHeight);
+window.addEventListener('load', adjustHeight);

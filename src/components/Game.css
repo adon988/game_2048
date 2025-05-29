@@ -1,6 +1,21 @@
 /* 隱藏遊戲區域的游標，避免出現文字游標 */
 .game-container {
-  caret-color: transparent;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.score-board {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  background-color: #bbada0;
+  padding: 10px;
+  border-radius: 6px;
 }
 .game-container {
   display: flex;
@@ -57,4 +72,8 @@
 .restart-btn:hover {
   background: linear-gradient(90deg, #ffcc33 0%, #ffb347 100%);
   transform: scale(1.07);
+}
+html, body {
+  height: 100%;
+  overflow: hidden;
 }

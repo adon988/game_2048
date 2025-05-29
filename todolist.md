@@ -20,6 +20,9 @@
     *   [x] 建立 `todolist.md`，其中包含重建 2048 遊戲的任務清單。
 4.  **樣式調整：**
     *   [x] 調整 `my-2048-game/src/App.css` 和 `my-2048-game/src/index.css`，使遊戲界面更美觀。
+5. **增加手機操控**
+    *   [x] 完成手機操作功能，包括上下左右滑動手勢及防止頁面晃動。
+
 - 檢查 build/index.html favicon 路徑
 - 建議 package.json 設定 homepage
 - nginx 設定 root 指向 build，並加上 try_files
