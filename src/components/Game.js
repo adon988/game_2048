@@ -259,7 +259,22 @@ const Game = () => {
           Game Over!<br />
           Score: {score}
           <br />
-          <button className="restart-btn" onClick={initializeGrid}>Restart</button>
+          <button
+            className="restart-btn"
+            onClick={(event) => {
+              console.log('Restart button clicked');
+              event.preventDefault();
+              initializeGrid();
+            }}
+            onTouchStart={(event) => {
+              console.log('Restart button touched');
+              event.preventDefault();
+              initializeGrid();
+            }}
+          >
+            Restart
+          </button>
+          
         </div>
       )}
     </div>

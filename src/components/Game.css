@@ -68,6 +68,7 @@
   font-weight: bold;
   transition: background 0.2s, transform 0.2s;
   margin-top: 1em;
+  outline: none; /* 移除黃色底線 */
 }
 .restart-btn:hover {
   background: linear-gradient(90deg, #ffcc33 0%, #ffb347 100%);
